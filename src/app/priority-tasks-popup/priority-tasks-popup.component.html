@@ -1,0 +1,11 @@
+<div class="popup" *ngIf="tasks.length > 0">
+  <div class="popup-content">
+    <h2>Today's Priority Tasks</h2>
+    <ul>
+      <li *ngFor="let task of tasks">
+        {{ task.title }}
+      </li>
+    </ul>
+    <button (click)="closePopup()">Close</button>
+  </div>
+</div>

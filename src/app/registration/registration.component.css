@@ -1,0 +1,62 @@
+/* Container for the form */
+.form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Label styles */
+  label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  /* Input styles */
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+  }
+  
+  /* Input focus styles */
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+  }
+  
+  /* Button styles */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Button hover styles */
+  button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    form {
+      width: 90%;
+      padding: 15px;
+    }
+  }
+  

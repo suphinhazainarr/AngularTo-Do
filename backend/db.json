@@ -4,14 +4,16 @@
       "id": "1",
       "title": "Learn Angularrr",
       "completed": false,
+      "priority": "medium",
       "creationDate": "2024-07-01T00:00:00.000Z",
-      "lastUpdatedDate": "2024-07-16T07:45:07.662Z",
-      "editing": false
+      "lastUpdatedDate": "2024-07-18T07:58:29.228Z",
+      "editing": true
     },
     {
       "id": "2",
       "title": "Build a ToDo App",
       "completed": false,
+      "priority": "high",
       "creationDate": "2024-07-02T00:00:00.000Z",
       "lastUpdatedDate": "2024-07-16T07:17:28.051Z",
       "editing": true
@@ -20,10 +22,33 @@
       "id": "Tue Jul 16 2024 13:02:22 GMT+0530 (India Standard Time)",
       "title": "read",
       "completed": false,
+      "priority": "low",
       "creationDate": "2024-07-16T07:32:22.517Z",
       "dueDate": "2024-07-16T00:00:00.000Z",
       "lastUpdatedDate": "2024-07-16T07:32:22.517Z",
       "editing": true
+    },
+    {
+      "id": "Thu Jul 18 2024 15:03:36 GMT+0530 (India Standard Time)",
+      "title": "run",
+      "completed": false,
+      "creationDate": "2024-07-18T09:33:36.311Z",
+      "dueDate": "2024-07-18T00:00:00.000Z",
+      "lastUpdatedDate": "2024-07-18T09:33:36.311Z",
+      "editing": true,
+      "priority": "high"
+    }
+  ],
+  "users": [
+    {
+      "id": "0a2d",
+      "username": "suphinhazainarr",
+      "password": "55"
+    },
+    {
+      "id": "f29a",
+      "username": "ren",
+      "password": "555"
     }
   ]
 }

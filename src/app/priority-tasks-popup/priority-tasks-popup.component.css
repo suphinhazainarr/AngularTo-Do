@@ -1,0 +1,73 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker background for better contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the popup is above other elements */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More pronounced shadow for depth */
+  text-align: center; /* Center align the text */
+  max-width: 500px; /* Limit the width of the popup */
+  width: 90%; /* Responsive width */
+  animation: fadeIn 0.3s ease; /* Smooth fade-in animation */
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  color: #333; /* Darker color for the title */
+  font-size: 24px; /* Larger font size for the title */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+.popup-content ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0 0 20px 0; /* Add some space below the list */
+}
+
+.popup-content li {
+  background: #f9f9f9; /* Light background for list items */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Space between list items */
+  color: #555; /* Darker text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for list items */
+}
+
+.popup-content button {
+  background-color: #007BFF; /* Blue background color */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Larger font size for the button */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.popup-content button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9); /* Slightly scale down */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); /* Scale to normal size */
+  }
+}

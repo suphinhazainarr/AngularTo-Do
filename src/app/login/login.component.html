@@ -1,5 +1,16 @@
-<p>login works!</p>
-<input type="text" placeholder="enter the name" [(ngModel)]="userName">
-<input type="password" placeholder="enter the password" [(ngModel)]="password">
+<!-- login.component.html -->
+<div class="form">
+  <div>
+    <label  >Username</label>
+    <input id="username"  type="text" [(ngModel)]="userName">
+  </div>
+  <div>
+    <label >Password</label>
+    <input id="password"  type="password" [(ngModel)]="password">
+  </div>
+  <button type="submit" (click)="authenticateUser()" >Login</button>
+<p>Don't have an account? <a (click)="gotoRegisterPage()" >register</a></p>
+<app-priority-tasks-popup *ngIf="showPopup" [tasks]="priorityTasks" (close)="closePopup()"></app-priority-tasks-popup>
 
-<button (click)="authenticateUser()">login</button>
+</div>
+   

@@ -43,7 +43,14 @@
 
 .todo-item button:hover {
   background-color: #ff1a1a;
+
 }
+
+
+/* .creation-date, .due-date, .last-updated, .priority {
+  font-size: 0.9em;
+  color: gray;
+} */
 .addbutton {
   width: 100%;
   background-color: #4CAF50; /* Green background */
@@ -66,4 +73,75 @@
 .todo-item .due-date {
   margin-left: 10px;
   color: #888;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.form-group > div {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.form-group label {
+  margin-right: 10px;
+  font-weight: bold;
+
+}
+
+.form-group input[type="date"],
+.priority-select select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  /* font-family: 'Times New Roman', Times, serif; */
+
+}
+
+
+
+.filter-dropdown {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-dropdown label {
+  margin-right: 10px;
+}
+
+.filter-dropdown select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+
+.todo-item .priority {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.priority-select {
+  margin: 10px 0;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+.priority-select select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* background-color: red; */
 }

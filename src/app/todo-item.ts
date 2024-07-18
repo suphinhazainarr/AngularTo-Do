@@ -8,4 +8,5 @@ export interface TodoItem {
   dueDate?: Date;
   lastUpdatedDate?: Date;
   editing?: boolean;  
+  priority? : string;
 }

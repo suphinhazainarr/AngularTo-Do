@@ -9,16 +9,4 @@ import { HttpClientModule ,provideHttpClient,withFetch } from '@angular/common/h
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(),importProvidersFrom(HttpClientModule),  provideHttpClient(withFetch())]
 
-
-
-
-
-
-
-
-
-
-
-
-
 };

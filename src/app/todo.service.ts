@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { TodoItem } from './todo-item';
 
 @Injectable({
@@ -24,6 +24,20 @@ export class TodoService {
   }
   updateTodoItem(item: TodoItem): Observable<TodoItem> {
     return this.http.put<TodoItem>(`${this.apiUrl}/${item.id}`, item);
+  }
+  
+  getPriorityTasks(): Observable<TodoItem[]> {
+    return this.http.get<TodoItem[]>(this.apiUrl).pipe(
+      map(tasks => tasks.filter(task => task.priority === 'high' ))
+    );
+  }
+
+  private isToday(date: string): boolean {
+    const today = new Date();
+    const taskDate = new Date(date);
+    return taskDate.getDate() === today.getDate() &&
+           taskDate.getMonth() === today.getMonth() &&
+           taskDate.getFullYear() === today.getFullYear();
   }
   
 }

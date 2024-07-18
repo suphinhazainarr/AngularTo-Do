@@ -15,7 +15,10 @@ export class TodoListComponent implements OnInit {
     todoItems: TodoItem[] = [];
     newItem: string = '';
     newDueDate: string = '';
-  
+    newPriority: string = 'low';
+    selectedFilter: string = 'today'
+    filteredItems: any[] = [];
+
     constructor(private todoService: TodoService) {}
   
     ngOnInit(): void {
@@ -42,7 +45,8 @@ export class TodoListComponent implements OnInit {
           creationDate: new Date(),
           dueDate: new Date(this.newDueDate || Date.now()),
           lastUpdatedDate: new Date(),
-          editing: true
+          editing: true,
+          priority: this.newPriority
 
       };
   
@@ -84,5 +88,33 @@ export class TodoListComponent implements OnInit {
        
       }
     }
-    
+
+    filterTasks() {
+      const today = new Date();
+      this.filteredItems = this.todoItems.filter(item => {
+          const dueDate = item.dueDate ? new Date(item.dueDate) : undefined;
+  
+          switch (this.selectedFilter) {
+              case 'today':
+                  return dueDate?.toDateString() === today.toDateString();
+  
+              case 'week':
+                  const weekStart = new Date(today);
+                  weekStart.setDate(today.getDate() - today.getDay());
+                  const weekEnd = new Date(today);
+                  weekEnd.setDate(today.getDate() + (6 - today.getDay()));
+                  return dueDate && !item.completed && dueDate >= weekStart && dueDate <= weekEnd;
+  
+              case 'month':
+                  return dueDate && !item.completed && dueDate.getMonth() === today.getMonth() && dueDate.getFullYear() === today.getFullYear();
+  
+              case 'all':
+                  return true;
+
+               default:
+                    return false; 
+          }
+      });
+  }
+  
 }
