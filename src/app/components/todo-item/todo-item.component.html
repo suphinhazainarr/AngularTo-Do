@@ -1,1 +1,5 @@
-<p>todo-item works!</p>
+<div class="todo-item" *ngIf="item">
+    <span [class.completed]="item.completed">{{ item.title }}</span>
+    <button (click)="deleteItem()">Delete</button>
+  </div>
+  

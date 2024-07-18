@@ -1,1 +1,14 @@
-<p>todo-list works!</p>
+<div class="todo-list">
+  <input #newTodo type="text" placeholder="Add a new task" [(ngModel)]="newItem">
+  <div>Due Date: <input type="date" [(ngModel)]="newDueDate"></div>  
+  <button class="addbutton" (click)="addTodoItem()">Add</button>
+  <div *ngFor="let item of todoItems" class="todo-item">
+    <input type="checkbox" [checked]="item.completed" (change)="toggleTodoItemCompletion(item)">
+    <span [class.completed]="item.completed">{{ item.title }}</span>
+    <span class="creation-date">Created: {{ item.creationDate | date: 'shortDate' }}</span>
+    <span class="due-date">Due: {{ item.dueDate | date: 'shortDate' }}</span>
+    <span class="last-updated">Updated: {{ item.lastUpdatedDate | date: 'shortDate' }}</span>
+    <button class="edit-button" (click)="editTodoItem(item)">{{ item.editing ? 'Edit ' : 'Save' }}</button>
+
+    <button class="delete-button" (click)="deleteTodoItem(item.id)">Delete</button>
+  </div>

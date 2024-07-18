@@ -1,0 +1,29 @@
+{
+  "todoItems": [
+    {
+      "id": "1",
+      "title": "Learn Angularrr",
+      "completed": false,
+      "creationDate": "2024-07-01T00:00:00.000Z",
+      "lastUpdatedDate": "2024-07-16T07:45:07.662Z",
+      "editing": false
+    },
+    {
+      "id": "2",
+      "title": "Build a ToDo App",
+      "completed": false,
+      "creationDate": "2024-07-02T00:00:00.000Z",
+      "lastUpdatedDate": "2024-07-16T07:17:28.051Z",
+      "editing": true
+    },
+    {
+      "id": "Tue Jul 16 2024 13:02:22 GMT+0530 (India Standard Time)",
+      "title": "read",
+      "completed": false,
+      "creationDate": "2024-07-16T07:32:22.517Z",
+      "dueDate": "2024-07-16T00:00:00.000Z",
+      "lastUpdatedDate": "2024-07-16T07:32:22.517Z",
+      "editing": true
+    }
+  ]
+}
