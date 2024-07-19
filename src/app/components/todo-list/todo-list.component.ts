@@ -18,12 +18,17 @@ export class TodoListComponent implements OnInit {
     newPriority: string = 'low';
     selectedFilter: string = 'today'
     filteredItems: any[] = [];
+    totalTasks: number = 0;
+  completedTasks: number = 0;
+  pendingTasks: number = 0;
 
     constructor(private todoService: TodoService) {}
   
     ngOnInit(): void {
       
       this.loadTodoItems();
+      this.updateStatistics();
+
     }
   
     loadTodoItems(): void {
@@ -34,6 +39,13 @@ export class TodoListComponent implements OnInit {
           }));
       });
     }
+
+
+  updateStatistics() {
+    this.totalTasks = this.todoItems.length;
+    this.completedTasks = this.todoItems.filter(item => item.completed).length;
+    this.pendingTasks = this.todoItems.filter(item => !item.completed).length;
+  }
   
     addTodoItem(): void {
       if (this.newItem.trim().length === 0) return;
@@ -56,18 +68,24 @@ export class TodoListComponent implements OnInit {
           this.newItem = '';
           this.newDueDate = '';
       });
+      this.updateStatistics();
+
     }
   
     deleteTodoItem(id: string): void {
       this.todoService.deleteTodoItem(id).subscribe(() => {
           this.todoItems = this.todoItems.filter(item => item.id !== id);
       });
+      this.updateStatistics();
+
     }
   
     toggleTodoItemCompletion(item: TodoItem): void {
       item.completed = !item.completed;
       item.lastUpdatedDate = new Date();
       this.todoService.updateTodoItem(item).subscribe();
+      this.updateStatistics();
+
     }
     
     editTodoItem(item: TodoItem): void {
@@ -87,6 +105,7 @@ export class TodoListComponent implements OnInit {
         });
        
       }
+      
     }
 
     filterTasks() {
@@ -116,6 +135,8 @@ export class TodoListComponent implements OnInit {
                     return false; 
           }
       });
+      this.updateStatistics();
+
   }
   
 }

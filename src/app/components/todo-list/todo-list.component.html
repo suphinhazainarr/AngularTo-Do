@@ -36,3 +36,23 @@
 
     <button class="delete-button" (click)="deleteTodoItem(item.id)">Delete</button>
   </div>
+
+
+ <!-- dashboard.component.html -->
+<div class="dashboard">
+  <h1>Task Analysis</h1>
+  <div class="stats">
+    <div class="stat">
+      <h3>Total Tasks</h3>
+      <p>{{ totalTasks }}</p>
+    </div>
+    <div class="stat">
+      <h3>Completed Tasks</h3>
+      <p>{{ completedTasks }}</p>
+    </div>
+    <div class="stat">
+      <h3>Pending Tasks</h3>
+      <p>{{ pendingTasks }}</p>
+    </div>
+  </div>
+</div>
