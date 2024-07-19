@@ -26,7 +26,7 @@
   </div> 
   
   <button class="addbutton" (click)="addTodoItem()">Add</button>
-  <div *ngFor="let item of todoItems" class="todo-item">
+  <div *ngFor="let item of filteredItems" class="todo-item">
     <input type="checkbox" [checked]="item.completed" (change)="toggleTodoItemCompletion(item)">
     <span [class.completed]="item.completed">{{ item.title }}</span>
     <span class="creation-date">Created: {{ item.creationDate | date: 'shortDate' }}</span>

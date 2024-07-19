@@ -90,10 +90,11 @@ export class TodoListComponent implements OnInit {
     }
 
     filterTasks() {
+      console.log(this.selectedFilter);
       const today = new Date();
       this.filteredItems = this.todoItems.filter(item => {
           const dueDate = item.dueDate ? new Date(item.dueDate) : undefined;
-  
+      
           switch (this.selectedFilter) {
               case 'today':
                   return dueDate?.toDateString() === today.toDateString();
