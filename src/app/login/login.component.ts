@@ -6,6 +6,7 @@ import { RegistrationComponent } from '../registration/registration.component';
 import { RegistrationService } from '../registration.service';
 import { PriorityTasksPopupComponent } from "../priority-tasks-popup/priority-tasks-popup.component";
 import { TodoService } from '../todo.service';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent {
   priorityTasks: any[] = [];
 
 
-  constructor(private router: Router , private loginService: RegistrationService ,private taskService: TodoService){
+  constructor(private router: Router , private loginService: RegistrationService ,private taskService: TodoService,private sharedService: SharedService){
 
   }
 
@@ -32,10 +33,13 @@ export class LoginComponent {
       if(result.length){
         alert("login successfull !");
         // this.router.navigate(['/app']);
-
+        this.sharedService.triggerUpdateStatistics(); // Trigger the update statistics event
         this.fetchPriorityTasks();
         this.showPopup = true;
 
+      }
+      else{
+        alert("wrong Credentials!");
       }
     })
   }
@@ -46,7 +50,9 @@ export class LoginComponent {
 
   closePopup() {
     this.showPopup =false;
+
     this.router.navigate(['/app']);
+
   }
 
   fetchPriorityTasks(){

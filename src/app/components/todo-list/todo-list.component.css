@@ -1,3 +1,4 @@
+
 .todo-list {
   max-width: 600px;
   margin: 20px auto;
@@ -32,19 +33,6 @@
   text-decoration: line-through;
 }
 
-.todo-item button {
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.todo-item button:hover {
-  background-color: #ff1a1a;
-
-}
 
 
 /* .creation-date, .due-date, .last-updated, .priority {
@@ -184,4 +172,44 @@
 .stat p {
   font-size: 1.2em;
   margin: 0;
+}
+.clone-button {
+  background-color: #007BFF;
+  margin-left: 10px;
+}
+
+.clone-button:hover {
+  background-color: #0056b3;
+}
+.todo-item button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 16px;
+  margin-right: 5px;
+  color: #007BFF; /* Blue color */
+  transition: color 0.3s ease;
+}
+
+.todo-item button:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.todo-item button:focus {
+  outline: none;
+}
+
+.todo-item .edit-button {
+  /* background-color: #007BFF; */
+  color: #007BFF;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todo-item .edit-button:hover {
+  color: #0056b3;
+
 }

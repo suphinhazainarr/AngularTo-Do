@@ -14,7 +14,7 @@
 <div class="todo-list">
   <input #newTodo type="text" placeholder="Add a new task" [(ngModel)]="newItem">
   <div class="form-group">
-    <div>Due Date: <input type="date" [(ngModel)]="newDueDate"></div>
+    <div>Due Date: <input type="date" [(ngModel)]="newDueDate" (change)="formatDueDate()"></div>
     <div class="priority-select">
       Priority:
       <select [(ngModel)]="newPriority">
@@ -32,9 +32,23 @@
     <span class="creation-date">Created: {{ item.creationDate | date: 'shortDate' }}</span>
     <span class="due-date">Due: {{ item.dueDate | date: 'shortDate' }}</span>
     <span class="last-updated">Updated: {{ item.lastUpdatedDate | date: 'shortDate' }}</span>
-    <button class="edit-button" (click)="editTodoItem(item)">{{ item.editing ? 'Edit ' : 'Save' }}</button>
+    <!-- <button class="edit-button" (click)="editTodoItem(item)">{{ item.editing ? 'Edit ' : 'Save' }}</button> -->
 
-    <button class="delete-button" (click)="deleteTodoItem(item.id)">Delete</button>
+    <button class="edit-button" (click)="editTodoItem(item)">
+      <i [class]="item.editing ? 'fas fa-save' : 'fas fa-edit'"></i>
+    </button>
+    <!-- <button class="edit-button" (click)="editTodoItem(item)">
+      <i [class]="item.editing ? 'fas fa-edit' : 'fas fa-save'"></i>
+    </button> -->
+  
+    <button class="delete-button" (click)="deleteTodoItem(item.id)">
+      <i class="fas fa-trash-alt"></i>
+    </button>
+  
+    <button class="clone-button" (click)="cloneTodoItem(item)">
+      <i class="fas fa-clone"></i>
+    </button>
+
   </div>
 
 
